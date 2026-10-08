@@ -1,0 +1,29 @@
+A1: unbiased walk, N=640, M=200k: Var(X)=642.4 (theory N*h^2=640), D_est=0.5019 (theory h^2/(2tau)=0.5); mean=0.046 ~ 0
+A2: N=400, M=200k: max|P_mc-P_gauss|=3.115e-04, relative L2 deviation=0.0135
+A3: biased walk p=0.550: v_num=0.09995 vs v_theory=0.10000; D_num=0.4939 vs 0.5 (drift does not change the 2nd moment)
+A4: master equation by explicit finite differences (Dirichlet), relative L2 error order = 2.00 (theory 2)
+A5: fixed T=1, D=0.5, M=200k trajectories; h=2^-1..2^-6 with tau=h^2/(2D). KS distance between the rescaled walk distribution and N(0,1): 0.1875, 0.0972, 0.0510, 0.0268, 0.0135, 0.0072; fitted slope vs log h = 0.941
+A6: finest case (h=2^-6, N=4096): max|density_MC - normal| = 1.567e-01
+A7: biased walk variance: Var_num = 396.07, 394.41, 386.61, 333.87 vs N h^2 (1-beta^2) = 399.00, 396.00, 384.00, 336.00 (the O(beta^2) correction disappears only in the weak-bias limit beta=O(h))
+C1: u_t=D u_xx+rho u(1-u), step data; x_f(140)=300.19; instantaneous speed c=1.9863 vs theory 2*sqrt(D rho)=2.0000 (rel. error 0.68%)
+C1b: exponential-tail data exp(-x) (critical decay rate): c=1.9945 (rel. error 0.27%)
+C1c: slowly decaying tail exp(-0.5 x) (lambda0=0.5 < lambda_*=1): measured c=2.3315 vs D*lambda0 + rho/lambda0 = 2.5000 (and vs the minimal speed 2.0000)
+C1d: genuinely compactly supported data (u=1 on a window of half-width 3, 0 outside): measured c=1.9919 vs minimal speed 2sqrt(D rho)=2.0000 (rel. error 0.40%)
+C2: spatial decay rate lambda_num=0.9110 vs theory c/(2D)=sqrt(rho/D)=1.0000
+C5: front positions x_f(t) at t=100..300 give a fitted speed c_fit=1.9647 vs theory 2sqrt(D rho)=2.0000 (relative error 1.76%)
+C4: collapse z=x-c_fit*t on the common window z in [-6.9,52.1]: the three profiles (t=200,250,300) differ by at most 2.38e-02 (a residual of this size at the steep front is expected from the 1.8% speed error over a 50-time-unit separation)
+C3: D=0.5,1,2: measured speed 1.347, 1.907, 2.699 vs theory 1.414, 2.000, 2.828
+D0: quasi-steady nutrient (c=1, R=5.0, L=sqrt(Dn/kn)=1.000): n(r)=n_inf R sinh(r/L)/(r sinh(R/L)); n(0)=0.0674 (6.7% of rim); n(L)/n(0)=1.175; L/R=0.20
+D0c: time-dependent solver vs analytic profile (R=30, rho=0): max|num-ana|=1.914e-02
+D1: baseline Dc=rho=1, Dn=1, kn=0.25 (L=2), R0=2: R(30)=50.872, mean speed 1.6291, dt=9.01e-04; n(0,30)=1.0028e-01
+D1b (clipping statistics over the whole run): events=0 of 33306 steps, max correction |dc|=0.00e+00, max |dn|=0.00e+00, total sum|dc|=0.00e+00
+D2: R(t) = 2.05, 7.53, 14.25, 23.13, 32.25, 41.52, 50.87; n(0,t) = 0.8169, 0.5217, 0.2639, 0.1205, 0.1042, 0.1010, 0.1003; R_nec(t) = 0.00, 0.00, 0.00, 4.55, 14.95, 24.35, 33.70
+D2b: incremental speed dR/dt = 1.369, 1.680, 1.775, 1.825, 1.853, 1.871 (nutrient-rich limit 2*sqrt(Dc*rho)=2 for kappa->0)
+D4: L=sqrt(Dn/kn)=1.00, 2.00, 4.00 -> R(25)=41.39, 41.52, 41.55, n(0)=0.0477, 0.1010, 0.3311, R_nec=36.50, 24.35, 0.00
+D5: t=30: R=50.872, necrotic core R_nec=33.700 (R_nec/R=0.662), rim thickness ~17.172; hypoxic radius (n<0.15)=35.450
+D6: chi = +0.0, +0.5, +1.0, -1.0 -> R(20) = 32.25, 32.41, 32.57, 31.95
+D8: front position and mean speed R(t)/t at t = 30, 50, 100, 200: R/t = 1.6291, 1.7353, 1.8278, 1.8819; reference 2*sqrt(rho/(1+kappa)) = 1.9518
+D9: time-step refinement (dt, R(10)): (3.60e-03, 14.249782), (1.80e-03, 14.249813), (9.01e-04, 14.249821); max |R(dt)-R(dt/4)| = 3.95e-05
+D10: grid refinement (dr, R(10)): (0.2000, 14.252141), (0.1000, 14.249782), (0.0500, 14.249113); max |R - R(finest)| = 3.03e-03
+B1: angular spread of R(theta): t=9: 0.00e+00%, t=20: 0.00e+00%, t=30: 0.00e+00% (machine precision -> radially symmetric solution is stable)
+B1b: Rbar(t)=16.440, 34.928, 54.021; speed (t=20->30) = 1.9098 vs 2sqrt(D rho)=2.000
